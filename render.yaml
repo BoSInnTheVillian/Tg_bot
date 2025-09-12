@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: telegram-bot
+    env: python
+    plan: free
+    buildCommand: |
+      apt-get update && apt-get install -y $(cat aptfile.txt)
+      pip install -r requirements.txt
+    startCommand: python main.py
